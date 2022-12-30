@@ -46,6 +46,11 @@ const user = {
     id: 5,
     name: "Segun"
 };
+// can also be written as this below for user2
+const user2 = {
+    id: 5,
+    name: "Segun"
+};
 // Type Assertion
 let cid = "hello";
 let customerID = cid;
