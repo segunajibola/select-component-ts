@@ -12,7 +12,7 @@ let person2; // array of arrays and will only contain number and string in the o
 person2 = [
     [1, "John"],
     [2, "Mike"],
-    [3, "Lekan"]
+    [3, "Lekan"],
 ];
 // Union
 let pid; // can be string or number
@@ -44,12 +44,12 @@ var Direction2;
 console.log(Direction.Up, Direction2.Left); // output = one, three
 const user = {
     id: 5,
-    name: "Segun"
+    name: "Segun",
 };
 // can also be written as this below for user2
 const user2 = {
     id: 5,
-    name: "Segun"
+    name: "Segun",
 };
 // Type Assertion
 let cid = "hello"; // cid can be any type
@@ -59,10 +59,35 @@ let customerID2 = cid; // same as above, customerID2 can have cid as a number
 customerID = cid = 2;
 // Functions
 function addNum(x, y) {
+    // parameters can be numbers, the return will be a number.
     return x + y;
 }
 // Void
 function log(message) {
+    // parameters can be string or number, the return is not specified so it's void.
     console.log(message);
 }
 log("hello"); // Can be able to pass string or number to log() function
+const user3 = {
+    id: 5,
+    secondid: 3,
+    name: "Segun",
+    age: 3,
+};
+// user3.secondid = 4 // cannot change value because it is only read-only
+user3.age = 4; // can change value of age
+const p1 = 2;
+// Arrow function
+const add = (x, y) => x + y;
+const sub = (x, y) => x - y;
+// Classes
+class Person {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+}
+const brad = new Person(3, "brad");
+const mike = new Person(2, "mike");
+console.log("brad", brad.id, brad.name);
+console.log("mike", mike.id, mike.name);
