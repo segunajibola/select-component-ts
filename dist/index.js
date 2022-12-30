@@ -52,10 +52,11 @@ const user2 = {
     name: "Segun"
 };
 // Type Assertion
-let cid = "hello";
-let customerID = cid;
-// let customerID = cid as a number
-customerID = 1;
+let cid = "hello"; // cid can be any type
+let customerID = cid; // customerID can have cid as a number
+let customerID2 = cid; // same as above, customerID2 can have cid as a number
+// cid can be anything but customerID can only be a number
+customerID = cid = 2;
 // Functions
 function addNum(x, y) {
     return x + y;
@@ -64,5 +65,4 @@ function addNum(x, y) {
 function log(message) {
     console.log(message);
 }
-log("hello");
-// Can be able to pass string or number to log() function
+log("hello"); // Can be able to pass string or number to log() function
