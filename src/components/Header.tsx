@@ -7,7 +7,12 @@ export interface Props {
 
 const Header = (props: Props) => {
   return (
-    <h1 style={{ color: props.color ? props.color : "blue" }}>{props.title}</h1>
+    <>
+      <h1 style={{ color: props.color ? props.color : "blue" }}>
+        {props.title}
+      </h1>
+      <h1>Free react + typescript setup</h1>
+    </>
   );
 };
 
