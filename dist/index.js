@@ -98,7 +98,7 @@ class Person2 {
     }
 }
 const mike = new Person(2, "mike");
-console.log("mike", mike.id, mike.name, mike.register()); //output = "mike", 2, "mike", "mike is now registered"
+// console.log("mike", mike.id, mike.name, mike.register()); //output = "mike", 2, "mike", "mike is now registered"
 // Subclasses
 class Employee extends Person {
     constructor(id, name, position) {
@@ -107,3 +107,14 @@ class Employee extends Person {
     }
 }
 const emp = new Employee(2, "Shawn", "Developer");
+// console.log(emp.id, emp.name, emp.position, emp.register()) // output = "2 Shawn Developer Shawn is now registered"
+// Generics
+function getArray(items) {
+    // T is a placeholder for the type,
+    return new Array().concat(items);
+}
+let numArray = getArray([1, 2, 3, 4]); // number is like the argument, now we can only pass in numbers
+let strArray = getArray(["hello", "world"]); // we can only pass string
+// console.log(numArray) // output = [1, 2, 3, 4]
+strArray.push("2");
+// console.log(strArray) // output = [ 'hello', 'world', '2' ]
