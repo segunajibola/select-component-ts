@@ -25,7 +25,7 @@ var Direction;
     Direction[Direction["Left"] = 2] = "Left";
     Direction[Direction["Right"] = 3] = "Right";
 })(Direction || (Direction = {}));
-console.log(Direction.Up, Direction.Left); // output = 1, 3
+// console.log(Direction.Up, Direction.Left); // output = 0, 2
 var Direction1;
 (function (Direction1) {
     Direction1[Direction1["Up"] = 2] = "Up";
@@ -33,7 +33,7 @@ var Direction1;
     Direction1[Direction1["Left"] = 4] = "Left";
     Direction1[Direction1["Right"] = 5] = "Right";
 })(Direction1 || (Direction1 = {}));
-console.log(Direction.Up, Direction.Left); // output = 2, 4
+// console.log(Direction1.Up, Direction1.Left); // output = 2, 4
 var Direction2;
 (function (Direction2) {
     Direction2["Up"] = "one";
@@ -41,7 +41,6 @@ var Direction2;
     Direction2["Left"] = "three";
     Direction2["Right"] = "four";
 })(Direction2 || (Direction2 = {}));
-console.log(Direction.Up, Direction2.Left); // output = one, three
 const user = {
     id: 5,
     name: "Segun",
@@ -65,9 +64,8 @@ function addNum(x, y) {
 // Void
 function log(message) {
     // parameters can be string or number, the return is not specified so it's void.
-    console.log(message);
+    console.log(`The message is ${message}`);
 }
-log("hello"); // Can be able to pass string or number to log() function
 const user3 = {
     id: 5,
     secondid: 3,
@@ -86,8 +84,26 @@ class Person {
         this.id = id;
         this.name = name;
     }
+    register() {
+        return `${this.name} is now registered`;
+    }
 }
-const brad = new Person(3, "brad");
+class Person2 {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+    register() {
+        return `${this.name} is now registered`;
+    }
+}
 const mike = new Person(2, "mike");
-console.log("brad", brad.id, brad.name);
-console.log("mike", mike.id, mike.name);
+console.log("mike", mike.id, mike.name, mike.register()); //output = "mike", 2, "mike", "mike is now registered"
+// Subclasses
+class Employee extends Person {
+    constructor(id, name, position) {
+        super(id, name);
+        this.position = position;
+    }
+}
+const emp = new Employee(2, "Shawn", "Developer");
